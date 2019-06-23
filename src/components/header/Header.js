@@ -9,15 +9,15 @@ function Header() {
       <header className='container'>
         <div className='row'>
 
-          <div className='col-4 text-left pl-0'>
+          <div className='col-lg-4 col-md-4 text-left pl-0'>
             <img alt='' src={logo} />
           </div>
 
-          <div className='col-5'>
+          <div className='col-xl-5 col-lg-6 col-md-6'>
             <div className='container'>
               <div className='row text-left feedback'>
 
-                <div className='pr-3'>
+                <div className='pr-3 d-none d-lg-block'>
                   <img alt='' src={icon_phone} />
                 </div>
 
@@ -33,7 +33,7 @@ function Header() {
             </div>
           </div>
 
-          <div className='col-1 p-0 align-self-center'>
+          <div className='col-lg-1 p-0 align-self-center d-none d-xl-block'>
             <div className='container'>
               <div className='row justify-content-end languages'>
                 <div className='p-0 flag' />
@@ -41,7 +41,7 @@ function Header() {
               </div>
             </div>
           </div>
-          <div className='col-2 p-0 align-self-center text-right'>
+          <div className='col-lg-2 col-md-2 p-0 align-self-center text-right'>
             <a href='#account' className="account">Личный кабинет</a>
           </div>
 

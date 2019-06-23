@@ -1,0 +1,40 @@
+.login {
+    background: #ffffff;
+    padding-top: 50px;
+}
+
+.login input {
+    height: 58px;
+    margin-bottom: 20px;
+    border: 1px solid #bdcacf;
+    border-radius: 6px;
+    padding: 1px;
+    text-indent: 15px;
+    transition: all .3s;
+}
+
+.login input:focus {
+    border-color: #898A8A;
+    box-shadow: none;
+}
+
+.login .btn {
+    font-family: CirceBold;
+    font-size: 12px;
+    border-radius: 6px;
+    padding: 10px 60px;
+    text-transform: uppercase;
+}
+
+.login .btn:focus {
+    box-shadow: none;
+}
+
+.btn-green {
+    background-color: #bcedb7;
+    color: #028f58;
+}
+
+.btn-green:hover {
+    background-color: #ade2a7;
+}
