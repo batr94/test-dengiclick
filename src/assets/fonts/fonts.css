@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'CirceRegular';
+    src: url('Circe-Regular.eot');
+    src: url('Circe-Regular.eot') format('embedded-opentype'),
+    url('Circe-Regular.woff') format('woff'),
+    url('Circe-Regular.ttf') format('truetype'),
+    url('Circe-Regular.svg#Circe-Regular') format('svg');
+}
+
+@font-face {
+    font-family: 'CirceBold';
+    src: url('Circe-Bold.eot');
+    src: url('Circe-Bold.eot') format('embedded-opentype'),
+    url('Circe-Bold.woff') format('woff'),
+    url('Circe-Bold.ttf') format('truetype'),
+    url('Circe-Bold.svg#Circe-Bold') format('svg');
+}
