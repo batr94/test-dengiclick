@@ -17,3 +17,10 @@ export function saveTokenInStorage(token) {
 export function removeTokenFromStorage() {
   sessionStorage.removeItem('token');
 }
+
+export async function getLoans() {
+  const headers = {
+    'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+  };
+  return await axios.get(`${URL_PATH}/loans`, { headers: headers });
+}

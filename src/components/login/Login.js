@@ -13,18 +13,17 @@ function Login({ onSuccess }) {
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      setInProcess(true);
+      await setInProcess(true);
       const result = await authorization(login, password);
-      setErrorMessage('');
+      await setInProcess(false);
+      await setErrorMessage('');
       onSuccess(result.data.data.token);
     } catch (error) {
+      await setInProcess(false);
       error.response
-        ? setErrorMessage(error.response.data.error.message)
-        : setErrorMessage(error.message);
-    } finally {
-      setInProcess(false);
+        ? await setErrorMessage(error.response.data.error.message)
+        : await setErrorMessage(error.message);
     }
-
   };
 
   return (
