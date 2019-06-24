@@ -11,6 +11,10 @@ body {
   font-family: CirceRegular, sans-serif;
 }
 
+main {
+  background: #ffffff;
+}
+
 .title {
   font-size: 32px;
   margin: 35px 0 25px;

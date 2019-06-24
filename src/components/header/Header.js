@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 import icon_phone from '../../assets/images/icon-phone.png';
 import './Header.css';
@@ -42,7 +43,7 @@ function Header() {
             </div>
           </div>
           <div className='col-lg-2 col-md-2 p-0 align-self-center text-right'>
-            <a href='#account' className="account">Личный кабинет</a>
+            <Link to='/loans' className="account">Личный кабинет</Link>
           </div>
 
         </div>
