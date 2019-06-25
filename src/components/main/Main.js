@@ -5,7 +5,7 @@ function Main() {
     <div className='container'>
       <div className='row'>
         <div className='col text-left'>
-          <h1>Главная страница</h1>
+          <h1 className='title'>Главная страница</h1>
           <p>Войдите в личный кабинет чтобы посмотреть список своих займов</p>
         </div>
       </div>

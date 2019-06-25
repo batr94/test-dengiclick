@@ -1,10 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 import icon_phone from '../../assets/images/icon-phone.png';
 import './Header.css';
 
-function Header() {
+function Header({ token, removeToken,history }) {
+
+  const logout = async () => {
+    await removeToken();
+    history.push('/');
+  };
+
   return (
     <section>
       <header className='container'>
@@ -43,7 +49,18 @@ function Header() {
             </div>
           </div>
           <div className='col-lg-2 col-md-2 p-0 align-self-center text-right'>
-            <Link to='/loans' className="account">Личный кабинет</Link>
+            <button className="account dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Личный кабинет
+            </button>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <Link className='dropdown-item' to='/loans'>Список займов</Link>
+              {!token &&
+                <Link className='dropdown-item' to='/login'>Войти</Link>
+              }
+              {token &&
+                <button className='dropdown-item' onClick={logout}>Выйти</button>
+              }
+            </div>
           </div>
 
         </div>
@@ -53,4 +70,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default withRouter(Header);

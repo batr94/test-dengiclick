@@ -24,3 +24,10 @@ export async function getLoans() {
   };
   return await axios.get(`${URL_PATH}/loans`, { headers: headers });
 }
+
+export async function getLoan(loanId) {
+  const headers = {
+    'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+  };
+  return await axios.get(`${URL_PATH}/loan/${loanId}/detail`, { headers: headers });
+}

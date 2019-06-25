@@ -5,6 +5,7 @@ import Header from '../header';
 import Login from '../login';
 import Main from '../main';
 import Loans from '../loans';
+import Loan from '../loan';
 import Footer from '../footer';
 import { saveTokenInStorage, removeTokenFromStorage } from "../../utils/api";
 import './App.css';
@@ -19,14 +20,17 @@ function App({ history }) {
     history.push('/loans');
   };
 
-  const removeToken = useCallback(() => {
+  const removeToken = useCallback(async () => {
     removeTokenFromStorage();
-    setToken('');
+    await setToken('');
   }, []);
 
   return (
     <div className="App d-flex flex-column">
-      <Header removeToken={removeToken} />
+      <Header
+        token={stateToken}
+        removeToken={removeToken}
+      />
       <main className='flex-grow-1'>
         <Switch>
           <Route exact path='/' component={Main} />
@@ -37,6 +41,11 @@ function App({ history }) {
           <Route path='/loans' render={() =>
             stateToken
               ? <Loans removeToken={ removeToken }/>
+              : <Redirect to='/login' />
+          } />
+          <Route path='/loan/:loanId' render={(props ) =>
+            stateToken
+              ? <Loan { ...props } />
               : <Redirect to='/login' />
           } />
         </Switch>
